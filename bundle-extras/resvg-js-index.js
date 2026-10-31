@@ -1,6 +1,3 @@
-// Android has no prebuilt native resvg, so this module offers the same `Resvg` class
-// on top of @resvg/resvg-wasm. main.js loads the WASM once (initWasm) after the bot has started.
-// Nothing heavy happens until the first image is drawn, so a problem here can never stop the bot from starting.
 const fs = require("fs");
 const path = require("path");
 
@@ -23,7 +20,6 @@ class Resvg {
     }
     const wasm = require("@resvg/resvg-wasm");
     const opts = Object.assign({}, options);
-    // The native build reads fonts installed on the phone; the WASM build can't, so it gets the bundled ones.
     opts.font = Object.assign({}, options.font || {}, {
       loadSystemFonts: false,
       fontBuffers: fonts(),

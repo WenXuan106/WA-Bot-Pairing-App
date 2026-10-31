@@ -14,12 +14,12 @@ typedef struct {
     size_t_ size;
     size_t_ align;
     union { uintptr_t_ index; void *address; } object;
-    void *value; /* initial contents, or 0 for zeros */
+    void *value; 
 } emutls_control;
 
 typedef struct {
     size_t_ count;
-    void *data[1]; /* really `count` entries */
+    void *data[1]; 
 } emutls_array;
 
 static int g_lock;

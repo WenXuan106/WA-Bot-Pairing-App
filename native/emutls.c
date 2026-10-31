@@ -1,8 +1,3 @@
-/*
- * Provides __emutls_get_address for libnode.so (nodejs-mobile is built with emulated thread-local storage,
- * and the libc++_shared.so we ship doesn't export this helper). Same ABI as LLVM compiler-rt's emutls.c.
- * Written without libc headers, like nodeglue.c: pthread/malloc come from Android's libc at runtime.
- */
 typedef __SIZE_TYPE__ size_t_;
 typedef __UINTPTR_TYPE__ uintptr_t_;
 
